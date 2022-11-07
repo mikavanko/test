@@ -1,0 +1,132 @@
+@import "reset";
+// @import "circle_font";
+// @import "lato_font";
+@import "lato2_font";
+@import "colors";
+@import "variables";
+@import "mixins";
+
+body {
+  min-height: 100vh;
+  color: $color-dark;
+  background: $color-light;
+  font-family: $Lato;
+  font-size: 14px;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.v-wrapper{
+  max-width: 375px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  @media all and (min-width: $xl){
+    min-width: $xl;
+    max-width: $xxl;
+  }
+}
+
+svg{
+  width: 1em;
+  height: 1em;
+}
+
+.link,
+a{
+  text-decoration: none;
+  color: $color-primary;
+  cursor: pointer;
+}
+
+// toast notification styles
+.v-notification-toast{
+  padding: 20px;
+  background-color: $color-light;
+  width: 300px;
+  min-width: 300px;
+  box-shadow: 0px 0px 20px rgba(3, 2, 41, 0.15);
+  border-radius: 8px;
+
+  .Vue-Toastification__toast-body{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: $color-dark;
+  }
+  .Vue-Toastification__icon{
+    margin: 0 10px 0 0;
+  }
+  .Vue-Toastification__progress-bar{
+    height: 4px;
+  }
+  .Vue-Toastification__close-button{
+    font-size: 24px;
+    color: $color-dark-20;
+    opacity: 1;
+  }
+
+  // Type error
+  &.Vue-Toastification__toast--error{
+    
+    .Vue-Toastification__icon{
+      font-size: 24px;
+      width: 24px;
+      color: $color-error;
+    }
+    .Vue-Toastification__progress-bar{
+      background-color: rgba($color-error, 0.5);
+    }
+  }
+  // Type success
+  &.Vue-Toastification__toast--success{
+    
+    .Vue-Toastification__icon{
+      font-size: 24px;
+      width: 24px;
+      color: $color-success;
+    }
+    .Vue-Toastification__progress-bar{
+      background-color: rgba($color-success, 0.5);
+    }
+  }
+}
+
+// global perfect scrollbar style
+.ps__thumb-y{
+  width: 6px;
+  border-radius: 8px;
+  background-color: $color-primary-50;
+}
+.ps__rail-y:hover > .ps__thumb-y, .ps__rail-y:focus > .ps__thumb-y, .ps__rail-y.ps--clicking .ps__thumb-y{
+  background-color: $color-primary-70;
+  width: 6px;
+}
+.ps .ps__rail-x:hover, .ps .ps__rail-y:hover, .ps .ps__rail-x:focus, .ps .ps__rail-y:focus, .ps .ps__rail-x.ps--clicking, .ps .ps__rail-y.ps--clicking{
+  background-color: transparent;
+  opacity: 1;
+}
+
+// simplebar scrollbar style
+.simplebar-track {
+  .simplebar-scrollbar:before{
+    width: 6px;
+    border-radius: 8px;
+    background: $color-primary-50;
+  }
+  .simplebar-scrollbar.simplebar-hover:before{
+    background-color: $color-primary-70;
+  }
+  .simplebar-scrollbar.simplebar-visible:before{
+    opacity: 1;
+  }
+  .simplebar-scrollbar:before{
+    width: auto;
+  }
+}
+.simplebar-content-wrapper{
+  outline: none;
+}
